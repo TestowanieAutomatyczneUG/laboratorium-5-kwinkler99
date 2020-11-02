@@ -7,4 +7,7 @@ class hamming:
             else:
                 return 1
 
+        elif genA == genB:
+            return 0
+
 
