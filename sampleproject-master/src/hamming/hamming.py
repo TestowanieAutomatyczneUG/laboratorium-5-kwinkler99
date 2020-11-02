@@ -1,4 +1,5 @@
 
 class hamming:
     def distance(self, genA, genB):
-        return
+        if genA == "" and  genB == "":
+            return 0
