@@ -3,7 +3,7 @@ class song:
         self.text = ["On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.",
                      "On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a "
                      "Pear Tree.", "On the third day of Christmas my true love gave to me: three French Hens, "
-                                   "two Turtle Doves, and a Partridge in a Pear Tree.",
+                     "two Turtle Doves, and a Partridge in a Pear Tree.",
                      "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French Hens, "
                      "two Turtle Doves, and a Partridge in a Pear Tree.",
                      "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, "
@@ -31,15 +31,28 @@ class song:
                      "seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French "
                      "Hens, two Turtle Doves, and a Partridge in a Pear Tree."
                      ]
+
     def one_verse(self, num):
-        return self.text[num-1]
+        if isinstance(num, int) and 1 <= num <= 12:
+            return self.text[num - 1]
+        else:
+            raise ValueError("Error")
 
     def verse_from_to(self, frm, to):
-        song = ''
-        for i in range(to-1, frm):
-            song += self.text[i]
-            song += '\n\n'
-        return song
+        if isinstance(frm, int) and 1 <= frm <= 12 and 1 <= to <= 12 and frm < to:
+            text = ''
+            for i in range(frm - 1, to):
+                text += self.text[i]
+                if i != to - 1:
+                    text += '\n\n'
+            return text
+        else:
+            raise ValueError("Error")
 
     def all(self):
-        return self.text
+        text = ''
+        for i in range(len(self.text)):
+            text += self.text[i]
+            if i != len(self.text) - 1:
+                text += '\n\n'
+        return text

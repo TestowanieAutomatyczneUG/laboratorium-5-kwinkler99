@@ -75,8 +75,33 @@ class SongTest(unittest.TestCase):
                          "five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, "
                          "and a Partridge in a Pear Tree.")
 
+    def test_only_few_verse_3_5(self):
+        self.assertEqual(self.temp.verse_from_to(3, 5),
+                         "On the third day of Christmas my true love gave to me: three French Hens, "
+                         "two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French "
+                         "Hens, "
+                         "two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, "
+                         "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.")
+
+    def test_only_few_verse_2_7(self):
+        self.assertEqual(self.temp.verse_from_to(2, 7),
+                         "On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge "
+                         "in a ""Pear Tree.\n\n" "On the third day of Christmas my true love gave to me: three French "
+                         "Hens, ""two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the fourth day of Christmas my true love gave to me: four Calling Birds, three French "
+                         "Hens, ""two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, "
+                         "three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the sixth day of Christmas my true love gave to me: six Geese-a-Laying, five Gold Rings, "
+                         "four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
+                         "On the seventh day of Christmas my true love gave to me: seven Swans-a-Swimming, "
+                         "six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle "
+                         "Doves, ""and a Partridge in a Pear Tree.")
+
     def test_song(self):
-        self.assertEqual(self.temp.verse_from_to(1, 12),
+        self.assertEqual(self.temp.all(),
                          "On the first day of Christmas my true love gave to me: a Partridge in a "
                          "Pear Tree.\n\nOn the second day of Christmas my true love gave to me: two "
                          "Turtle Doves, and a Partridge in a Pear Tree.\n\nOn the third day of "
@@ -113,6 +138,25 @@ class SongTest(unittest.TestCase):
                          "Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear "
                          "Tree.")
 
+    def test_number_0_one_verse(self):
+        with self.assertRaisesWithMessage(ValueError):
+            self.temp.one_verse(0)
+
+    def test_str_not_int_one_verse(self):
+        with self.assertRaisesWithMessage(ValueError):
+            self.temp.one_verse("4")
+
+    def test_str_not_int_frm_to(self):
+        with self.assertRaisesWithMessage(ValueError):
+            self.temp.verse_from_to("4", 5)
+
+    def test_str_not_int_frm_to2(self):
+        with self.assertRaisesWithMessage(ValueError):
+            self.temp.verse_from_to("4", "8")
+
+    def test_str_not_int_frm_to3(self):
+        with self.assertRaisesWithMessage(ValueError):
+            self.temp.verse_from_to(8, 5)
 
     # Utility functions
     def setUp(self):
