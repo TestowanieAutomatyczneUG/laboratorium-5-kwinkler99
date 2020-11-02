@@ -1,15 +1,20 @@
 def roman(arg):
-    if arg <= 3:
-        return "I" * arg
-    elif arg <= 5:
-        return "I" * (5 - arg) + "V"
-    elif arg <= 8:
-        return "V" + "I" * (arg - 5)
-    elif arg <= 10:
-        return "I" * (10 - arg) + "X"
-    elif arg == 27:
-        return "X" * (27 // 10) + "V" + "I" * (arg - 25)
-    elif arg == 48:
-        return "XLV" + "I" * (arg - 45)
-    elif arg == 49:
-        return "XL" + "I" * (50 - arg) + "X"
+    int_val = [
+            50, 40,
+            10, 9, 5, 4,
+            1
+            ]
+    rom = [
+        "L", "XL",
+        "X", "IX", "V", "IV",
+        "I"
+        ]
+    rom_val = ''
+    i = 0
+    if arg < 100:
+        while arg > 0:
+            for _ in range(arg // int_val[i]):
+                rom_val += rom[i]
+                arg -= int_val[i]
+            i += 1
+        return rom_val
