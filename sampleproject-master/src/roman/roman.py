@@ -1,2 +1,3 @@
 def roman(arg):
-    return
+    if arg == 1:
+        return "I"
