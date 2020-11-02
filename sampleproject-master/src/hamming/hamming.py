@@ -16,7 +16,7 @@ class hamming:
 
             return counter
 
-        elif len(genA) > 1 and 1 < len(genB) != len(genA):
+        elif 1 <= len(genB) != len(genA):
             raise ValueError("Error")
 
             
