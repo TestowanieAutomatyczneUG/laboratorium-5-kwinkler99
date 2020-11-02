@@ -10,11 +10,15 @@ class hamming:
                 return 1
             
         counter = 0
-        for i in range(len(genA)):
-            counter += check(genA[i], genB[i])
+        if len(genA) == len(genB):
+            for i in range(len(genA)):
+                counter += check(genA[i], genB[i])
 
-        return counter
-            
+            return counter
+
+        elif len(genA) > len(genB) and len(genA) > 1:
+            raise ValueError("Error")
+
             
 
 
