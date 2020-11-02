@@ -3,3 +3,5 @@ def roman(arg):
         return "I"*arg
     elif(arg <= 5):
         return "I"*(5-arg)+"V"
+    else:
+        return "V"+"I"*(arg-5)
