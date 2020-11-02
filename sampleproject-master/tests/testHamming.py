@@ -4,10 +4,10 @@ from hamming.hamming import hamming
 class HammingTest(unittest.TestCase):
     def test_empty_strands(self):
         self.assertEqual(self.temp.distance("", ""), 0)
-    #
-    # def test_single_letter_identical_strands(self):
-    #     self.assertEqual(hamming.distance("A", "A"), 0)
-    #
+
+    def test_single_letter_identical_strands(self):
+        self.assertEqual(hamming.distance("A", "A"), 0)
+
     # def test_single_letter_different_strands(self):
     #     self.assertEqual(hamming.distance("G", "T"), 1)
     #
