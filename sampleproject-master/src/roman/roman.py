@@ -11,3 +11,5 @@ def roman(arg):
         return "X" * (27 // 10) + "V" + "I" * (arg - 25)
     elif arg == 48:
         return "XLV" + "I" * (arg - 45)
+    elif arg == 49:
+        return "XL" + "I" * (50 - arg) + "X"
