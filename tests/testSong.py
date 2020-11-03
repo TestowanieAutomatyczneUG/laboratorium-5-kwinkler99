@@ -1,5 +1,5 @@
 import unittest
-from song.song import song
+from src.song import song
 
 
 class SongTest(unittest.TestCase):

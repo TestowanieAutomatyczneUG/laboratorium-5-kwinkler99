@@ -1,5 +1,6 @@
 import unittest
-from hamming.hamming import hamming
+from src.hamming import hamming
+
 
 class HammingTest(unittest.TestCase):
     def test_empty_strands(self):
