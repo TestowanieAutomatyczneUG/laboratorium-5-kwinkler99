@@ -18,6 +18,4 @@ jobs:
         python -m pip install --upgrade pip
     - name: Test with unittest
       run: |
-        python -m unittest tests/testHamming.py
-        python -m unittest tests/testRoman.py
-        python -m unittest tests/testSong.py
+        python -m unittest discover tests/
