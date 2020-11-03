@@ -1,0 +1,9 @@
+[package]
+name = "laboratorium-5-kwinkler99"
+version = "0.1.0"
+authors = ["Katarzyna Winkler <kasia.winkler99@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

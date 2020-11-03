@@ -56,3 +56,4 @@ class song:
             if i != len(self.text) - 1:
                 text += '\n\n'
         return text
+
